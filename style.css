@@ -1,4 +1,9 @@
 * {
     background-color: lavender;
     color: navy;
+    list-style: none;
+}
+
+ul {
+    border: 1px solid navy;
 }
