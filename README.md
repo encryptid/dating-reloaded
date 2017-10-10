@@ -12,7 +12,7 @@ Add a clickable button that adds a new random profile to the list.
 Here are some images you can use:
 
 `-- Men --`
-https://randomuser.me/api/portraits/men/18.jpg
+`https://randomuser.me/api/portraits/men/18.jpg`
 https://randomuser.me/api/portraits/men/90.jpg
 https://randomuser.me/api/portraits/men/22.jpg
 https://randomuser.me/api/portraits/men/25.jpg
