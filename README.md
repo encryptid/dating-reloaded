@@ -11,7 +11,7 @@ Add a clickable button that adds a new random profile to the list.
 
 Here are some images you can use:
 
-`-- Men --
+`-- Men --`
 https://randomuser.me/api/portraits/men/18.jpg
 https://randomuser.me/api/portraits/men/90.jpg
 https://randomuser.me/api/portraits/men/22.jpg
@@ -36,7 +36,7 @@ https://randomuser.me/api/portraits/women/52.jpg
 https://randomuser.me/api/portraits/women/9.jpg`
 
 
-##Hard mode
+## Hard mode
 ---
 Add the users who have been 'liked' to an ordered list in the DOM.
 
