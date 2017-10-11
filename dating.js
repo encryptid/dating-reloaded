@@ -40,11 +40,11 @@ function init() {
         return Math.floor(Math.random() * (people.length + 1));
     }
 
-    newProfile();
+    //newProfile();
 
     //console.log(rando);
 
-    let profiles = document.querySelector('ul');
+    let profiles = document.querySelector('ul:last-child');
 
     function newProfile() {
         let num = rando();
@@ -52,9 +52,9 @@ function init() {
         let section = document.querySelector('section');
         let profile = document.createElement('ul');
         let name = document.createElement('li');
-        name.textContent = people[num].name;
+        name.textContent = 'Name: ' + people[num].name;
         let age = document.createElement('li');
-        age.textContent = people[num].age;
+        age.textContent = 'Age: ' + people[num].age;
         let pic = document.createElement('li');
         let picsrc = document.createElement('img');
         picsrc.src = people[num].pic;
@@ -63,22 +63,33 @@ function init() {
         profile.appendChild(age);
         profile.appendChild(pic);
         pic.appendChild(picsrc);
+        let aye = document.createElement('button');
+        aye.setAttribute('id', 'good');
+        aye.textContent = "We'll see";
+        aye.addEventListener('click', good);
+        profile.appendChild(aye);
+        let nay = document.createElement('button');
+        nay.setAttribute('id', 'pass');
+        nay.textContent = "Hard Pass";
+        nay.addEventListener('click', pass);
+        profile.appendChild(nay);
+        console.log(profiles);
     };
+
+    function addFade() {
+        profiles.classList.add('faded');
+    }
 
     function pass() {
         console.log("I'll pass...");
-
-        profiles.classList.add('faded');
-
+        addFade();
         newProfile();
     };
 
     function good() {
         console.log("Seems promising...");
-
-        profiles.classList.add('faded');
-
-        newProfile()
+        addFade();
+        newProfile();
     };
 
     let no = document.querySelector('#pass');
