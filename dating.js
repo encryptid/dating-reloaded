@@ -36,39 +36,56 @@ function init() {
     ];
 
     // Trying to make a random number generator between 0 and people.length
-    let rando = Math.floor((Math.random() * (people.length + 1)));
+    function rando() {
+        return Math.floor(Math.random() * (people.length + 1));
+    }
 
-    /** Use Math.random to generate a random number btw 0-1, multiply that by
-     * the amount of people in the array, plus one (because otherwise, you 
-     * can never return the actual highest number) and then use Math.floor to
-     * round down to the nearest whole number. Makes sense, I think. */
-    
-    console.log(rando);
+    newProfile();
 
-    let profile = document.querySelector('ul');
+    //console.log(rando);
 
-    let no = document.querySelector('#pass');
-    no.addEventListener('click', function () {
-        console.log("I'll pass...");
-
-        profile.classList.add('faded');
-        
-        //newProfile()
-
-    });
-
-    let yes = document.querySelector('#good');
-    yes.addEventListener('click', function () {
-        console.log("Seems promising...");
-
-        profile.classList.add('faded');
-
-        //newProfile()
-    });
+    let profiles = document.querySelector('ul');
 
     function newProfile() {
-        
-    }
+        let num = rando();
+        console.log(num);
+        let section = document.querySelector('section');
+        let profile = document.createElement('ul');
+        let name = document.createElement('li');
+        name.textContent = people[num].name;
+        let age = document.createElement('li');
+        age.textContent = people[num].age;
+        let pic = document.createElement('li');
+        let picsrc = document.createElement('img');
+        picsrc.src = people[num].pic;
+        section.appendChild(profile);
+        profile.appendChild(name);
+        profile.appendChild(age);
+        profile.appendChild(pic);
+        pic.appendChild(picsrc);
+    };
+
+    function pass() {
+        console.log("I'll pass...");
+
+        profiles.classList.add('faded');
+
+        newProfile();
+    };
+
+    function good() {
+        console.log("Seems promising...");
+
+        profiles.classList.add('faded');
+
+        newProfile()
+    };
+
+    let no = document.querySelector('#pass');
+    no.addEventListener('click', pass)
+
+    let yes = document.querySelector('#good');
+    yes.addEventListener('click', good);
 
     console.log(people.length);
 }
