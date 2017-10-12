@@ -38,6 +38,6 @@ https://randomuser.me/api/portraits/women/9.jpg`
 
 ## Hard mode
 
-Add the users who have been 'liked' to an ordered list in the DOM.
+- Add the users who have been 'liked' to an ordered list in the DOM.
 
-Create a new profile on an interval (approx 1 per second).
+- Create a new profile on an interval (approx 1 per second).
