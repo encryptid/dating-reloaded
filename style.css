@@ -17,3 +17,7 @@ li {
 .faded {
     opacity: 0.4
 }
+
+.faded button {
+    display: none;
+}
