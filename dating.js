@@ -37,16 +37,15 @@ function init() {
 
     // Trying to make a random number generator between 0 and people.length
     function rando() {
-        return Math.floor(Math.random() * (people.length + 1));
+        return Math.floor(Math.random() * (people.length));
     }
 
     //newProfile();
 
     //console.log(rando);
 
-    let profiles = document.querySelector('ul:last-child');
-
     function newProfile() {
+        addFade();
         let num = rando();
         console.log(num);
         let section = document.querySelector('section');
@@ -73,22 +72,23 @@ function init() {
         nay.textContent = "Hard Pass";
         nay.addEventListener('click', pass);
         profile.appendChild(nay);
-        console.log(profiles);
+        //console.log(profiles);
     };
 
     function addFade() {
-        profiles.classList.add('faded');
-    }
+        let profiles = document.querySelectorAll('ul');
+        for (let i = 0; i < (profiles.length); i++) {
+            profiles[i].classList.add('faded');
+        }
+    };
 
     function pass() {
         console.log("I'll pass...");
-        addFade();
         newProfile();
     };
 
     function good() {
         console.log("Seems promising...");
-        addFade();
         newProfile();
     };
 
