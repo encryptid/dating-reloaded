@@ -40,14 +40,12 @@ function init() {
         return Math.floor(Math.random() * (people.length));
     }
 
-    //newProfile();
-
-    //console.log(rando);
+    let current = {};
 
     function newProfile() {
         addFade();
         let num = rando();
-        console.log(num);
+        current = people[num];
         let section = document.querySelector('section');
         let profile = document.createElement('ul');
         let name = document.createElement('li');
@@ -72,8 +70,9 @@ function init() {
         nay.textContent = "Hard Pass";
         nay.addEventListener('click', pass);
         profile.appendChild(nay);
-        //console.log(profiles);
     };
+
+    newProfile();
 
     function addFade() {
         let profiles = document.querySelectorAll('ul');
@@ -83,12 +82,12 @@ function init() {
     };
 
     function pass() {
-        console.log("I'll pass...");
+        console.log("I'll pass on " + current.name);
         newProfile();
     };
 
     function good() {
-        console.log("Seems promising...");
+        console.log(current.name + " seems promising...");
         newProfile();
     };
 
