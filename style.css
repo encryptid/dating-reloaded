@@ -1,21 +1,58 @@
 * {
-    background-color: lavender;
-    color: navy;
+    background-color: #0B41F9;
+    color: black;
     list-style: none;
+    font-family: sans-serif;
 }
 
-ul {
-    border: 1px solid navy;
-    background-color: lightblue;
+header {
+    text-align: center;
+}
+
+h1, p, h2 {
+    color: #C85E42;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+section {
     width: 30%;
 }
 
+ul {
+    border: 25px solid #C85E42;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    padding: 0;
+}
+
+button {
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 1vh;
+    margin-top: 0;
+}
+
+.liked ul {
+    background-color: #1EA1B7;
+    border: 25px solid #C85E42;
+    border-radius: 10px;
+}
+
+.liked li {
+    background-color: white;
+}
+
 li {
-    background-color: lightblue;
+    background-color: white;
 }
 
 .faded {
-    opacity: 0.4
+    opacity: 0.4;
 }
 
 .faded button {

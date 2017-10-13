@@ -41,12 +41,13 @@ function init() {
     }
 
     let current = {};
+    let keepers = [];
 
     function newProfile() {
         addFade();
         let num = rando();
         current = people[num];
-        let section = document.querySelector('section');
+        let section = document.querySelector('.main');
         let profile = document.createElement('ul');
         let name = document.createElement('li');
         name.textContent = 'Name: ' + people[num].name;
@@ -75,7 +76,7 @@ function init() {
     newProfile();
 
     function addFade() {
-        let profiles = document.querySelectorAll('ul');
+        let profiles = document.querySelectorAll('.main ul');
         for (let i = 0; i < (profiles.length); i++) {
             profiles[i].classList.add('faded');
         }
@@ -88,8 +89,27 @@ function init() {
 
     function good() {
         console.log(current.name + " seems promising...");
+        keepers.push(current);
+        addKeepers();
         newProfile();
     };
+
+    function addKeepers() {
+        let section = document.querySelector('.liked');
+        let profile = document.createElement('ul');
+        let name = document.createElement('li');
+        name.textContent = 'Name: ' + current.name;
+        let age = document.createElement('li');
+        age.textContent = 'Age: ' + current.age;
+        let pic = document.createElement('li');
+        let picsrc = document.createElement('img');
+        picsrc.src = current.pic;
+        section.appendChild(profile);
+        profile.appendChild(name);
+        profile.appendChild(age);
+        profile.appendChild(pic);
+        pic.appendChild(picsrc);
+    }
 
     let no = document.querySelector('#pass');
     no.addEventListener('click', pass)
